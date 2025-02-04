@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/daniel-trindade/Área de trabalho/pasta de trabalho/extractorAPI/venv/bin/python3" "$0" "$@"
-' '''
+#!/home/ian/Documents/códigos/DataViewer/corpusAPI/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
