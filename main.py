@@ -17,7 +17,6 @@ def read_root():
 
 @app.get("/video")
 async def read_item(id_video: str, language_code: str, doc_type: str, background_tasks: BackgroundTasks):
-    #PDF NÃO FUNCIONA
     filename = "arquivo.pdf" if doc_type == "pdf" else "arquivo.txt"
     transcript_path = get_video_transcript(id_video, language_code, doc_type)
     background_tasks.add_task(delete_file, transcript_path)
@@ -30,7 +29,6 @@ async def read_item(id_video: str):
 
 @app.get("/video/translate")
 async def read_item(id_video: str, source_language_code: str, target_language_code: str, doc_type: str, background_tasks: BackgroundTasks):
-    #PDF NÃO FUNCIONA
     filename = "arquivo.pdf" if doc_type == "pdf" else "arquivo.txt"
     transcript_path = translate_video_transcript(id_video, source_language_code, target_language_code)
     background_tasks.add_task(delete_file, transcript_path)

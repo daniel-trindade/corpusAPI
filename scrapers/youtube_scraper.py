@@ -38,7 +38,7 @@ def get_video_transcript(video_id, language, doc_type = "txt"):
 
     file_path = os.path.join(save_path, f"{file_name}.{doc_type}")
     
-    save_file(file_path, text_formatted, doc_type)
+    save_file(file_path, text_formatted.replace('\n', ' '), doc_type)
 
     return file_path
 
@@ -58,7 +58,7 @@ def translate_video_transcript(video_id, source_language_code, target_language_c
     text_formatted = formatter.format_transcript(translated_transcript)
 
     file_path = os.path.join(save_path, f"{file_name}.{doc_type}")
-    save_file(file_path, text_formatted, doc_type)
+    save_file(file_path, text_formatted.replace('\n', ' '), doc_type)
 
     return file_path
 
