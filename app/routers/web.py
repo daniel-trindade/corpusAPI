@@ -4,6 +4,7 @@ from fastapi.responses import FileResponse
 
 from scrapers.web_scraper import extract_text
 from handlers import delete_file
+from funny import generate_funny_name
 
 router = APIRouter(prefix="/web", tags=["web"])
 
@@ -11,7 +12,7 @@ router = APIRouter(prefix="/web", tags=["web"])
 async def read_item(request: Request, doc_type: str, background_tasks: BackgroundTasks):
     # mudar código para aceitar url sem o http:// ou https://
 
-    filename = "arquivo.pdf" if doc_type == "pdf" else "arquivo.txt"
+    filename = generate_funny_name("pdf") if doc_type == "pdf" else generate_funny_name("txt")
     url = request.url._url.split('/', 4)[-1]
     url = url.split("?")[0]
 

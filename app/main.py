@@ -1,4 +1,4 @@
-#Inicializa o servidor FastAPI em desenvolvimento: fastapi dev main.py
+#Inicializa o servidor FastAPI em desenvolvimento: fastapi dev app/main.py
 #Inicializa o servidor FastAPI em produção: fastapi run main.py
 
 from fastapi import FastAPI
