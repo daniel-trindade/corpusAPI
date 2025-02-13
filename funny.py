@@ -5,8 +5,7 @@ def generate_funny_name(extension):
     """Generate a funny name based on the seed."""
     adjectives = ["maluco", "bizarro", "zueiro", "doido", "biruta", "tonto", "esquisito", "tretado"]
     nouns = ["pamonha", "tatu", "chinelão", "coquinho", "jiló", "jabuti", "pirulito", "pangaré"]
-    extensoes = [".txt", ".log", ".csv", ".json", ".dat"]
-
+    
     adj = random.choice(adjectives)
     subst = random.choice(nouns)
     random_id = generate_random_string(5)
