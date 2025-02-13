@@ -30,3 +30,31 @@ def save_file(file_path: str, content: str, doc_type: str = "txt") -> None:
         pdf.output(file_path)
     else:
         raise ValueError("Tipo de documento não suportado. Use 'txt' ou 'pdf'.")
+    
+def save_audio_file(file_path: str, content: bytes):
+    """
+    Saves an audio file as a binary file on the filesystem.
+
+    Args:
+        file_path (str): Path where the file will be saved.
+        content (bytes): Binary content of the audio file.
+
+    Raises:
+        TypeError: If the content is not in bytes format.
+        OSError: If there is an error while saving the file.
+    """
+
+    try:
+        # Ensure the directory exists
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+        # Check if the content is in bytes format
+        if not isinstance(content, bytes):
+            raise TypeError("Error: Audio file content must be in bytes format.")
+
+        # Save the file as binary
+        with open(file_path, "wb") as f:
+            f.write(content)
+
+    except Exception as e:
+        raise OSError(f"Failed to save the audio file {file_path}: {e}")
