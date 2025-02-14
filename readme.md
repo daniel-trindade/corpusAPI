@@ -1,4 +1,4 @@
-# 📌 About CorpusAPI
+# CorpusAPI
 
 This project is an API developed in Python using FastAPI. Its main goal is to create an API capable of returning text extracted from various sources to feed the database of LLMs  that use the RAG technique.
 
