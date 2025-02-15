@@ -75,5 +75,5 @@ If you wish to contribute to the project, feel free to open issues or pull reque
 
 ## 📜 License
 
-To be defined.
+This project is licensed under the MIT License.
 
