@@ -6,12 +6,27 @@ from handlers import generate_random_string, save_file
 
 def extract_text(url: str, doc_type: str = "txt") -> str:
     """
-    Extrai o texto principal da página HTML, retorna como string e salva no formato especificado.
+    Extracts the main text from an HTML page and saves it in the specified format.
 
-    :param url: URL da página para extração do texto.
-    :param doc_type: Tipo de documento para salvar o texto ("txt" ou "pdf").
-    :param save_path: Caminho para salvar o arquivo extraído.
-    :return: O texto extraído da página.
+    Parameters
+    ----------
+    url : str
+        URL of the webpage to extract text from.
+    doc_type : str, optional
+        File format for saving the extracted text ("txt" or "pdf", default: "txt").
+
+    Returns
+    -------
+    file_path : str
+        Path to the saved file containing the extracted text.
+
+    Notes
+    -----
+    - The output file name is generated randomly.
+    - The file is saved in the "files/" directory.
+    - If the directory does not exist, it is created automatically.
+    - The text is cleaned to remove unnecessary whitespace and special characters.
+    - If the URL request fails, a `ValueError` is raised.
     """
 
     save_path = "files/"
